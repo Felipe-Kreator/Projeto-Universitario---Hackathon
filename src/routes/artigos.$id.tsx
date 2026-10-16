@@ -143,6 +143,25 @@ function LerArtigo() {
         </p>
       </section>
 
+      {pdfUrl && (
+        <section aria-labelledby="pdf-embed" className="card-surface mt-8 p-4">
+          <h2 id="pdf-embed" className="text-lg font-semibold">
+            Artigo completo (PDF)
+          </h2>
+          <div className="mt-3 overflow-hidden rounded-lg border border-border">
+            <iframe
+              src={pdfUrl}
+              title={`PDF do artigo: ${artigo.titulo}`}
+              className="h-[80vh] w-full"
+              loading="lazy"
+            />
+          </div>
+          <p className="mt-2 text-xs text-muted-foreground">
+            Se o PDF não aparecer corretamente, use o botão "Abrir PDF completo" abaixo para visualizá-lo em uma nova aba.
+          </p>
+        </section>
+      )}
+
       <div className="mt-8 flex flex-wrap gap-3">
         {pdfUrl && (
           <a
